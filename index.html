@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vale of Eternity — Card Generator (p5.js)</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.3/lib/p5.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div id="left">
+      <div id="canvasWrap"></div>
+      <div id="sliderWrap">
+        <div class="sliderLabel">Масштаб</div>
+        <input id="scaleSlider" type="range" min="0" max="100" value="50" />
+      </div>
+    </div>
+
+    <div id="ui">
+      <div class="title">Редактор карты</div>
+
+      <div class="section">
+        <div class="row" id="familyRow"></div>
+      </div>
+
+      <div class="section">
+        <div class="label">Стоимость</div>
+        <div class="grid" id="costGrid"></div>
+      </div>
+
+      <div class="section">
+        <div class="label">Название</div>
+        <input id="nameInput" class="textInput" type="text" value="Лепрекон" />
+      </div>
+
+      <div class="section abilities">
+        <div class="abilityBlock">
+          <div class="abilityHead">
+            <label class="check"><input id="ab1Enabled" type="checkbox" checked /> Вкл</label>
+            <div class="label">Способность 1</div>
+          </div>
+          <div class="abilityBody">
+            <div class="typeCol" id="ab1Type"></div>
+            <textarea id="ab1Text" class="textArea" rows="3"></textarea>
+          </div>
+        </div>
+
+        <div class="abilityBlock">
+          <div class="abilityHead">
+            <label class="check"><input id="ab2Enabled" type="checkbox" checked /> Вкл</label>
+            <div class="label">Способность 2</div>
+          </div>
+          <div class="abilityBody">
+            <div class="typeCol" id="ab2Type"></div>
+            <textarea id="ab2Text" class="textArea" rows="3"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="label">Быстрые вставки</div>
+        <div class="tokenGrid" id="tokenGrid"></div>
+      </div>
+
+      <div class="section">
+        <div class="row">
+          <input id="creatureFile" type="file" accept="image/*" />
+          <button id="exportBtn" class="primary">Сохранить PNG (HD)</button>
+        </div>
+        <div class="hint">Подсказка: удерживайте клавиши 0–9, чтобы показать пример-карту поверх превью.</div>
+        <div class="hint">Перетаскивание: кликните по карте и тяните, чтобы двигать изображение существа.</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="sketch.js"></script>
+</body>
+</html>
